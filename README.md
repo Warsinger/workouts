@@ -23,13 +23,13 @@ I used Excel to import the data (live query using Power Query so it can be easil
 After generating a new file, you can simply *Refresh All* for the table in Excel and then go to the Pivot Table and *Refresh* there and the new data will show up.
 
 ## Pivot Table
-Here's a sample Pivot Table in Excel:
+### Here's a sample Pivot Table in Excel:
 <img width="327" alt="ActivityPivotTable" src="https://user-images.githubusercontent.com/5703848/169712083-8d7f433a-a62c-4733-99f6-9c5d9a3a74a8.png">
-Here's the configuration:
+
+### Here's the configuration:
 <img width="335" alt="ActivityPivotTableConfig" src="https://user-images.githubusercontent.com/5703848/169712148-45592a07-faf5-4f01-9374-141d849e8dcd.png">
 
-## Pivot Chart
-Here's a sample Pivot Chart
+### Here's a sample Pivot Chart:
 <img width="617" alt="ActivityPivotChart" src="https://user-images.githubusercontent.com/5703848/169712086-f9705303-abec-4c32-abee-e7b8b5bf2345.png">
 
 # Research
