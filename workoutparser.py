@@ -17,9 +17,12 @@ def main():
             writer = csv.DictWriter(csvoutfile, fieldnames=field_names)
             writer.writeheader()
             for file_name in os.listdir(directory):
-                if file_name.endswith(".csv"):
+                if match_file_name(file_name):
                     parse_file(os.path.join(directory, file_name),
                                field_names, writer)
+
+def match_file_name(file_name):
+    return file_name.startswith('HKWorkoutActivityType') and file_name.endswith('.csv')
 
 
 def parse_file(file_name, field_names, writer):
@@ -67,15 +70,15 @@ def find_common_headers(directory):
     headers = []
     file_count = 0
     for file_name in os.listdir(directory):
-        file_name = os.path.join(directory, file_name)
-        if file_name.endswith(".csv"):
+        if match_file_name(file_name):
+            file_name = os.path.join(directory, file_name)
             try:
                 headers.extend(parse_headers(file_name))
                 file_count += 1
-                print("parsing file", file_name)
+                print('parsing file', file_name)
             except StopIteration:
                 # don't increment file count, just skip file
-                print("empty file", file_name)
+                print('empty file', file_name)
 
     # convert to a map of header to count so we can remove fields not in every file
     header_map = Counter(headers)
@@ -109,5 +112,5 @@ def wrap_reader(csvfile):
     return csv.DictReader(csvfile)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
