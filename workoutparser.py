@@ -1,10 +1,7 @@
-from asyncore import write
 import csv
 import os
 import sys
 from collections import Counter
-from tabnanny import check
-from threading import local
 
 filter_values = {'HKWasUserEntered': '1'}
 
