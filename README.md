@@ -13,7 +13,7 @@ Use the app to download your workout data as a ZIP file and open the zip. The ap
 
 The parser script takes only one parameter that is the directory containing the downloaded CSV files.
 
-```/usr/bin/python3 /Users/matthewlee/dev/workouts/workoutparser.py ~/Downloads/workouts```
+```/usr/bin/python3 /Users/matthewlee/dev/workouts/workoutparser.py ~/Downloads/HealthAll_2022-05-142_13-46-39_SimpleHealthExportCSV```
 
 Output is a file in the current directory `health_output.csv`. This file can be opened or imported into Excel or any other tool for analysis.
 
@@ -21,6 +21,16 @@ Output is a file in the current directory `health_output.csv`. This file can be 
 Each file can be imported into Excel (or other tools) separately, but I wanted a single file to do analysis across workout types.
 I used Excel to import the data (live query using Power Query so it can be easily refreshed). I created a Pivot Table and Chart that plots the energy, duration, and Metabolic Equivalent of Task (MET). This is a measure of the work required and increases with the intensity.
 After generating a new file, you can simply *Refresh All* for the table in Excel and then go to the Pivot Table and *Refresh* there and the new data will show up.
+
+## Pivot Table
+Here's a sample Pivot Table in Excel:
+<img width="327" alt="ActivityPivotTable" src="https://user-images.githubusercontent.com/5703848/169712083-8d7f433a-a62c-4733-99f6-9c5d9a3a74a8.png">
+Here's the configuration:
+<img width="335" alt="ActivityPivotTableConfig" src="https://user-images.githubusercontent.com/5703848/169712148-45592a07-faf5-4f01-9374-141d849e8dcd.png">
+
+## Pivot Chart
+Here's a sample Pivot Chart
+<img width="617" alt="ActivityPivotChart" src="https://user-images.githubusercontent.com/5703848/169712086-f9705303-abec-4c32-abee-e7b8b5bf2345.png">
 
 # Research
 Upon looking at the data, a new field showed up that I hadn't seen: Average MET from the HKAverageMET field in the data. The units are kcal/(kg * hour). You can read all about it here:
